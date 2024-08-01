@@ -3257,32 +3257,29 @@ h3 {
 .testimonial {
   max-width: 400px;
   padding: 60px 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 245);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 .inner-testinomial {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   margin-bottom: 10px;
 }
 .inner-testinomial img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  height: 44px;
+  margin-bottom: 28px;
+  padding-left: 0px;
 }
 .testimonial p {
   font-size: 18px;
   line-height: 1.4;
+  font-weight: bold;
   color: #333;
   margin: 0;
 }
 
-.testimonial-author {
-  font-weight: 900;
-  color: #0a0909;
-}
 .testimonial p:last-child {
   margin-top: 10px;
   font-size: 16px;
