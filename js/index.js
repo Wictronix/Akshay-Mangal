@@ -4,21 +4,28 @@ AOS.init({
   once: false,
 });
 
-
 // FOR AKSHAY MANGAL TYPE-WRITER
-var text = "Akshay Mangal ";
-var typewriterText = document.getElementById('ani');
+var texts = [
+  "I’m Akshay Mangal",
+  "With Innovation",
+  "With Sustainability",
+  "With Efficiency",
+];
+var typewriterText = document.getElementById("ani");
+var textIndex = 0;
 
 function type() {
   var index = 0;
-  typewriterText.textContent = ''; // Clear existing text
+  typewriterText.textContent = ""; // Clear existing text
+
   function typeNextLetter() {
-    if (index < text.length) {
-      typewriterText.textContent += text.charAt(index);
+    if (index < texts[textIndex].length) {
+      typewriterText.textContent += texts[textIndex].charAt(index);
       index++;
       setTimeout(typeNextLetter, 100); // Adjust typing speed (in milliseconds)
     } else {
-      setTimeout(type, 500); // Wait for 1 second and start typing again
+      textIndex = (textIndex + 1) % texts.length; // Move to the next word
+      setTimeout(type, 500); // Wait for 0.5 seconds and start typing the next word
     }
   }
   typeNextLetter();
@@ -26,19 +33,16 @@ function type() {
 // console.log(1);
 try {
   type();
-}
-catch (e) {
+} catch (e) {
   // console.log(e);
 }
 
-
-
 // FOR NAVBAR
-const menuToggle = document.querySelector('.menu-icon');
-const menu = document.querySelector('.menu');
+const menuToggle = document.querySelector(".menu-icon");
+const menu = document.querySelector(".menu");
 
-menuToggle.addEventListener('click', function () {
-  menu.classList.toggle('menu-open');
+menuToggle.addEventListener("click", function () {
+  menu.classList.toggle("menu-open");
 });
 
 const navBar = document.querySelector(".nav");
@@ -61,20 +65,19 @@ window.onscroll = function () {
     document.getElementById("navbar").style.top = "-4rem";
   }
   prevScrollpos = currentScrollPos;
-}
+};
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
 
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
     });
   });
 });
 
-
-// LEAF ANIMATION FOR BLOGS PAGE 
+// LEAF ANIMATION FOR BLOGS PAGE
 const slider = document.querySelector(".slider");
 const sliderhead = document.querySelector(".slider-head");
 const blog = document.querySelector(".blogs");
@@ -85,14 +88,14 @@ window.addEventListener("scroll", () => {
   sliderhead.style.top = `${scrollPosition}px`;
 });
 
-
 // HOME PAGE COUNTERS
 const startYear = 2017;
-const currYear = (new Date()).getFullYear();
+const currYear = new Date().getFullYear();
 const industrialExperience = currYear - startYear;
-document.getElementById("industrial-experience-number").innerText = industrialExperience;
-document.getElementById("industrial-experience-number-sales").innerText = industrialExperience;
-
+document.getElementById("industrial-experience-number").innerText =
+  industrialExperience;
+document.getElementById("industrial-experience-number-sales").innerText =
+  industrialExperience;
 
 // ANIMATION ON FORM SUBMIT
 // const message_submit_div = document.getElementById("message-submit-div");
