@@ -5,12 +5,7 @@ AOS.init({
 });
 
 // FOR AKSHAY MANGAL TYPE-WRITER
-var texts = [
-  "I’m Akshay Mangal",
-  "With Innovation",
-  "With Sustainability",
-  "With Efficiency",
-];
+var texts = ["Innovation", "Sustainability", "Efficiency"];
 var typewriterText = document.getElementById("ani");
 var textIndex = 0;
 
